@@ -8,15 +8,18 @@
             },
             "releaseRules": [
                 {"type": "patch", "release": "patch"},
+                {"type": "Patch", "release": "patch"},
                 {"type": "minor", "release": "minor"},
+                {"type": "Minor", "release": "minor"},
                 {"type": "major", "release": "major"},
+                {"type": "Major", "release": "major"},
                 {"type": "no-release", "release": false}
               ]
           }],
           ["@semantic-release/release-notes-generator", {
             "preset": "conventionalcommits",
             "parserOpts": {
-                "headerPattern": "^(\\w*-\\d*)(?:\\: ((?i)patch|minor|major|no-release*))?(.*)$",
+                "headerPattern": "^(\\w*-\\d*)(?:\\: (patch|Patch|minor|Minor|major|Major|no-release))?(.*)$",
                 "headerCorrespondence": ["scope", "type", "subject"]
             },
             "writerOpts": {
