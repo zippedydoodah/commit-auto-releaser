@@ -22,6 +22,15 @@
                 "headerPattern": "^(\\w*-\\d*)(?:\\: (patch|Patch|minor|Minor|major|Major|no-release))?(.*)$",
                 "headerCorrespondence": ["scope", "type", "subject"]
             },
+            "releaseRules": [
+                {"type": "patch", "release": "patch"},
+                {"type": "Patch", "release": "patch"},
+                {"type": "minor", "release": "minor"},
+                {"type": "Minor", "release": "minor"},
+                {"type": "major", "release": "major"},
+                {"type": "Major", "release": "major"},
+                {"type": "no-release", "release": false}
+              ],
             "writerOpts": {
               "commitsSort": ["scope", "subject"]
             }
