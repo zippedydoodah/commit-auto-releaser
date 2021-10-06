@@ -3,7 +3,7 @@
         ["@semantic-release/commit-analyzer", {
             "preset": "conventionalcommits",
             "parserOpts": {
-                "headerPattern": "^(\\w*-\\d*)(?:\\: ((?i)patch|minor|major|no-release*))?(.*)$",
+                "headerPattern": "^(\\w*-\\d*)(?:\\: (patch|Patch|minor|Minor|major|Major|no-release))?(.*)$",
                 "headerCorrespondence": ["scope", "type", "subject"]
             },
             "releaseRules": [
