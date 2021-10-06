@@ -29,7 +29,7 @@
                     {"type": "major", "release": "major"},
                     {"type": "no-release", "release": false}
                 ],
-                "issueUrlFormat": "https://www.google.com/search?q={prefix}{id}"
+                "issueUrlFormat": "https://www.google.com/search?q={{prefix}}{{id}}"
             }
           }],
         "@semantic-release/github"
