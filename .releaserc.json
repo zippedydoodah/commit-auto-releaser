@@ -2,10 +2,10 @@
     "plugins": [
         ["@semantic-release/commit-analyzer", {
             "preset": "conventionalcommits",
-            "issuePrefixes": ["XXX-"],
             "parserOpts": {
                 "headerPattern": "^(\\w*-\\d*)(?:\\:[ \t]+(patch|minor|major|no-release))(.*)$",
-                "headerCorrespondence": ["scope", "type", "subject"]
+                "headerCorrespondence": ["scope", "type", "subject"],
+                "issuePrefixes": ["XXX-"]
             },
             "releaseRules": [
                 {"type": "patch", "release": "patch"},
@@ -16,6 +16,12 @@
           }],
           ["@semantic-release/release-notes-generator", {
             "preset": "conventionalcommits",
+            "issuePrefixes": ["PLE-"],
+            "parserOpts": {
+                "headerPattern": "^(\\w*-\\d*)(?:\\:[ \t]+(patch|minor|major|no-release))(.*)$",
+                "headerCorrespondence": ["scope", "type", "subject"],
+                "issuePrefixes": ["XXX-"]
+            },
             "presetConfig": {
                 "types": [
                     {"type": "patch", "release": "patch"},
