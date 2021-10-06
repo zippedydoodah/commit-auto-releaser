@@ -16,8 +16,10 @@
           }],
           ["@semantic-release/release-notes-generator", {
             "preset": "conventionalcommits",
-            "issuePrefixes": ["PLE-"],
+            "issuePrefixes": ["XXX-"],
             "parserOpts": {
+                "headerPattern": "^(\\w*-\\d*)(?:\\:[ \t]+(patch|minor|major|no-release))(.*)$",
+                "headerCorrespondence": ["scope", "type", "subject"],
                 "issuePrefixes": ["XXX-"]
             },
             "presetConfig": {
