@@ -1,20 +1,30 @@
 {
-"plugins": [
-    ["@semantic-release/commit-analyzer", {
-        "preset": "conventionalcommits",
-        "parserOpts": {
-            "headerPattern": "^(\\w*-\\d*)(?:\\: (patch|minor|major|no-release*))?(.*)$",
-            "headerCorrespondence": ["scope", "type", "subject"]
-        },
-        "releaseRules": [
-            {"type": "patch", "release": "patch"},
-            {"type": "minor", "release": "minor"},
-            {"type": "major", "release": "major"},
-            {"type": "no-release", "release": false}
-          ]
-      }],
-    "@semantic-release/release-notes-generator",
-    "@semantic-release/github"
-    ],
-    "branches": ["main"]
-}
+    "plugins": [
+        ["@semantic-release/commit-analyzer", {
+            "preset": "conventionalcommits",
+            "parserOpts": {
+                "headerPattern": "^(\\w*-\\d*)(?:\\: ((?i)patch|minor|major|no-release*))?(.*)$",
+                "headerCorrespondence": ["scope", "type", "subject"]
+            },
+            "releaseRules": [
+                {"type": "patch", "release": "patch"},
+                {"type": "minor", "release": "minor"},
+                {"type": "major", "release": "major"},
+                {"type": "no-release", "release": false}
+              ]
+          }],
+          ["@semantic-release/release-notes-generator", {
+            "preset": "conventionalcommits",
+            "parserOpts": {
+                "headerPattern": "^(\\w*-\\d*)(?:\\: ((?i)patch|minor|major|no-release*))?(.*)$",
+                "headerCorrespondence": ["scope", "type", "subject"]
+            },
+            "writerOpts": {
+              "commitsSort": ["scope", "subject"]
+            }
+          }],
+        "@semantic-release/github"
+        ],
+        "branches": ["main"]
+    }
+    
