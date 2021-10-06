@@ -17,7 +17,11 @@
               ]
           }],
           ["@semantic-release/release-notes-generator", {
-            "preset": "conventionalcommits"
+            "preset": "conventionalcommits",
+            "parserOpts": {
+                "headerPattern": "^(\\w*-\\d*)(?:\\: (patch|Patch|minor|Minor|major|Major|no-release))?(.*)$",
+                "headerCorrespondence": ["scope", "type", "subject"]
+            }
           }],
         "@semantic-release/github"
         ],
