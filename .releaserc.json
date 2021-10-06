@@ -2,10 +2,9 @@
     "plugins": [
         ["@semantic-release/commit-analyzer", {
             "preset": "conventionalcommits",
-            "issuePrefixes": ["PLE-"],
-            "issueUrlFormat": "myBugTracker.com/{prefix}{id}",
+            "issuePrefixes": ["XXX-"],
             "parserOpts": {
-                "headerPattern": "/^(\\w*-\\d*)(?:\\:[ \t]+(patch|minor|major|no-release))(.*)$/i",
+                "headerPattern": "^(\\w*-\\d*)(?:\\:[ \t]+(patch|minor|major|no-release))(.*)$",
                 "headerCorrespondence": ["scope", "type", "subject"]
             },
             "releaseRules": [
@@ -17,15 +16,14 @@
           }],
           ["@semantic-release/release-notes-generator", {
             "preset": "conventionalcommits",
-            "issuePrefixes": ["PLE-"],
-            "issueUrlFormat": "myBugTracker.com/{prefix}{id}",
             "presetConfig": {
                 "types": [
                     {"type": "patch", "release": "patch"},
                     {"type": "minor", "release": "minor"},
                     {"type": "major", "release": "major"},
                     {"type": "no-release", "release": false}
-                ]
+                ],
+                "issueUrlFormat": "myBugTracker.com/{prefix}{id}"
             }
           }],
         "@semantic-release/github"
