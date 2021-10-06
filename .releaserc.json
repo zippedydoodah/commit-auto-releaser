@@ -18,8 +18,6 @@
             "preset": "conventionalcommits",
             "issuePrefixes": ["PLE-"],
             "parserOpts": {
-                "headerPattern": "^(\\w*-\\d*)(?:\\:[ \t]+(patch|minor|major|no-release))(.*)$",
-                "headerCorrespondence": ["scope", "type", "subject"],
                 "issuePrefixes": ["XXX-"]
             },
             "presetConfig": {
@@ -29,7 +27,7 @@
                     {"type": "major", "release": "major"},
                     {"type": "no-release", "release": false}
                 ],
-                "issueUrlFormat": "myBugTracker.com/{prefix}{id}"
+                "issueUrlFormat": "https://www.google.com/search?q={prefix}{id}"
             }
           }],
         "@semantic-release/github"
