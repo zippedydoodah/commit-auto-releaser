@@ -5,7 +5,7 @@
             "issuePrefixes": ["PLE-"],
             "issueUrlFormat": "myBugTracker.com/{prefix}{id}",
             "parserOpts": {
-                "headerPattern": "^(\\w*-\\d*)(?:\\: (patch|minor|major|no-release*))(.*)$",
+                "headerPattern": "/^(\\w*-\\d*)(?:\\:[ \t]+(patch|minor|major|no-release))(.*)$/i",
                 "headerCorrespondence": ["scope", "type", "subject"]
             },
             "releaseRules": [
@@ -19,10 +19,6 @@
             "preset": "conventionalcommits",
             "issuePrefixes": ["PLE-"],
             "issueUrlFormat": "myBugTracker.com/{prefix}{id}",
-            "parserOpts": {
-                "headerPattern": "^(\\w*-\\d*)(?:\\: (patch|minor|major|no-release*))(.*)$",
-                "headerCorrespondence": ["scope", "type", "subject"]
-            },
             "presetConfig": {
                 "types": [
                     {"type": "patch", "release": "patch"},
